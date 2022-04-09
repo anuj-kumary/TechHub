@@ -1,0 +1,34 @@
+.hero img {
+    width: 100vw;
+    height: 100vh;
+}
+
+.hero::before {
+    position: absolute;
+    content: '';
+    height: 100vh;
+    width: -webkit-fill-available;
+    background-color: rgba(20, 19, 19, .5);
+}
+
+.hero__content {
+    position: absolute;
+}
+
+.hero__logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--white);
+
+}
+
+.hero__heading,
+.btn__warn,
+.sub__heading {
+    color: var(--white);
+}
+
+.hero__btn {
+    margin-top: 2rem;
+}
