@@ -48,7 +48,7 @@
 }
 
 .btn__icon {
-    background-color: #34343d;
+    background-color: var(--btn-bg-color);
     color: var(--off-white);
     border-radius: 50px;
 }
