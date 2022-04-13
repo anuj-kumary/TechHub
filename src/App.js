@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Navbar } from './components/Navbar/Navbar';
+import { Navbar } from './components';
 import Mockman from 'mockman-js';
-import { LandingPage } from './pages/Landing-Page/LandingPage';
-import { VideoListing } from './pages/VideoListing/VideoListing';
-import { SingleVideo } from './pages/SingleVideo/SingleVideo';
+import { LandingPage } from './pages';
+import { VideoListing } from './pages';
+import { SingleVideo } from './pages';
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sidebar } from '../../components/Sidebar/Sidebar';
+import { Sidebar } from '../../components';
 import { useData } from '../../contexts/data-context';
 import { VideoCard } from './components/VideoCard';
 import './VideoListing.css';

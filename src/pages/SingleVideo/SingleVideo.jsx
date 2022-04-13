@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Sidebar } from '../../components/Sidebar/Sidebar';
+import { Sidebar } from '../../components';
 import { useData } from '../../contexts/data-context';
 import './SingleVideo.css';
 
