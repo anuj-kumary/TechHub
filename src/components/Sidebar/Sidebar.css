@@ -1,0 +1,20 @@
+.sidebar {
+    background-color: var(--bg-color);
+    position: sticky;
+    min-width: 13rem;
+    height: 88vh;
+}
+
+.sidebar__menu {
+    margin: 0 auto;
+}
+
+.sidebar__link {
+    padding: 1.2rem 0 1rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.active {
+    background-color: var(--active-color);
+}

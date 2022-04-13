@@ -1,0 +1,13 @@
+.video__container {
+    display: flex;
+    width: 100vw;
+    background-color: var(--main-bg-color);
+}
+
+.video__list {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0 .5rem;
+}
