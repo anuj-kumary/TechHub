@@ -1,12 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './VideoCard.css';
 
 export const VideoCard = ({ item }) => {
-  const { img, title, creator, date } = item;
+  const navigate = useNavigate();
+  const { _id, img, title, creator, date } = item;
+
+  const singleVideoPage = () => {
+    navigate(`/singlevideo/${_id}`);
+  };
+
   return (
     <>
       <div className='card'>
-        <div className='card__imgs'>
+        <div className='card__imgs' onClick={() => singleVideoPage()}>
           <img className='img-res' src={img} alt='banner' />
         </div>
 

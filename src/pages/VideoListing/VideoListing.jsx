@@ -6,6 +6,7 @@ import './VideoListing.css';
 
 export const VideoListing = () => {
   const { state } = useData();
+
   return (
     <>
       <div className='video__container'>

@@ -1,0 +1,58 @@
+.videoplayer {
+    display: flex;
+    background-color: var(--main-bg-color);
+}
+
+.play__container {
+    min-height: 100vh;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem;
+}
+
+.play__container iframe {
+    height: calc(75vh - 72px);
+}
+
+.video__heading {
+    color: var(--off-white);
+}
+
+.video__author {
+    padding-top: .5rem;
+    color: var(--off-white);
+}
+
+.video__date {
+    color: var(--off-grey);
+    padding-top: .5rem;
+    font-size: .6rem;
+}
+
+.video__description {
+    padding-top: 1.5rem;
+}
+
+.desc__text {
+    padding: .5rem 1.5rem 0 0;
+    color: var(--off-white);
+    font-size: .9rem;
+    word-wrap: break-word;
+}
+
+.footer__btn {
+    float: right;
+    margin-top: -2rem;
+}
+
+.btn__icon {
+    background-color: #34343d;
+    color: var(--off-white);
+    border-radius: 50px;
+}
+
+.btn__icon:hover {
+    background-color: var(--warning-color);
+}
