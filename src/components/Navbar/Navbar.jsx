@@ -17,7 +17,7 @@ export const Navbar = () => {
 
         <ul className='navbar__right'>
           <div className='btn btn__primary'>
-            <Link className='text' to='/login'>
+            <Link className='text' to='/signin'>
               Login
             </Link>
           </div>
