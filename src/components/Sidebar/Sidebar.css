@@ -3,6 +3,8 @@
     position: sticky;
     min-width: 13rem;
     height: 88vh;
+    top: calc(12vh);
+    left: 0;
 }
 
 .sidebar__menu {

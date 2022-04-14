@@ -2,9 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Navbar } from './components';
 import Mockman from 'mockman-js';
-import { LandingPage } from './pages';
-import { VideoListing } from './pages';
-import { SingleVideo } from './pages';
+import { LandingPage, VideoListing, SingleVideo } from './pages';
 
 function App() {
   return (

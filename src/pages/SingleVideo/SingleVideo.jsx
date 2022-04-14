@@ -8,7 +8,7 @@ export const SingleVideo = () => {
   const { videoID } = useParams();
   const { state } = useData();
   const findVideo = state.videos?.find((element) => element._id === videoID);
-  console.log(findVideo);
+
   return (
     <>
       <div className='videoplayer'>
