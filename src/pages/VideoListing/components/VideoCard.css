@@ -1,0 +1,43 @@
+.card {
+    flex-wrap: wrap;
+    width: 17rem;
+    height: 16rem;
+    cursor: pointer;
+    margin: 1rem .125rem;
+}
+
+.card__heading {
+    font-size: .9rem;
+    color: var(--off-white);
+    word-wrap: break-word;
+    width: 10rem;
+}
+
+.card__heading>.icon {
+    float: right;
+}
+
+.card__imgs {
+    width: 17rem;
+    height: 9rem;
+}
+
+.icon {
+    float: right;
+    color: var(--off-white);
+    position: relative;
+    top: -2rem;
+    right: .3rem;
+}
+
+.card__author {
+    font-size: .7rem;
+    padding-left: 1rem;
+    color: var(--off-white);
+}
+
+.card__date {
+    float: right;
+    padding-right: .5rem;
+    color: var(--off-white);
+}

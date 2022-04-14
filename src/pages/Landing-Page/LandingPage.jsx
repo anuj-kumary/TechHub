@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../Landing-Page/LandingPage.css';
 
 export const LandingPage = () => {
@@ -11,9 +12,9 @@ export const LandingPage = () => {
           <h1 className='hero__heading'>Welcome to TechHub</h1>
           <h2 className='sub__heading'>Watch anywhere anytime.</h2>
           <div className='hero__btn'>
-            <a className='btn btn__warn' href='/'>
+            <Link to='/video' className='btn btn__warn'>
               Explore
-            </a>
+            </Link>
           </div>
         </div>
       </div>
