@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import './Auth.css';
+import { useAuth } from '../../contexts';
 
 export const Signin = () => {
+  const { loginHandler } = useAuth();
+  const [login, setLogin] = useState({
+    email: '',
+    password: '',
+  });
+
   return (
     <div className='container'>
       <div className='auth__form'>
@@ -15,16 +23,34 @@ export const Signin = () => {
             className='input-txt'
             placeholder='abc@gmail.com'
             type='email'
+            value={login.email}
+            onChange={(e) => setLogin({ ...login, email: e.target.value })}
           />
         </div>
         <div className='input'>
           <label className='label__text'>Password</label>
-          <input className='input-txt' type='password' placeholder='********' />
+          <input
+            className='input-txt'
+            type='password'
+            value={login.password}
+            placeholder='********'
+            onChange={(e) => setLogin({ ...login, password: e.target.value })}
+          />
         </div>
 
         <div className='btn__signup text__center'>
-          <button className='btn btn__primary'>Sign In</button>
-          <button className='btn btn__secondary'>Sign In as Guest</button>
+          <button
+            onClick={(e) => loginHandler(e, setLogin, login)}
+            className='btn btn__primary'
+          >
+            Sign In
+          </button>
+          <button
+            onClick={(e) => loginHandler(e, setLogin, login)}
+            className='btn btn__secondary'
+          >
+            Sign In as Guest
+          </button>
         </div>
         <div className='text__center'>
           <p className='login__nav'>
