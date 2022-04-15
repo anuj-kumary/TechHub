@@ -47,12 +47,20 @@
     margin-top: -2rem;
 }
 
-.btn__icon {
-    background-color: var(--btn-bg-color);
+.btn__action {
     color: var(--off-white);
     border-radius: 50px;
 }
 
-.btn__icon:hover {
+.btn__icon {
+    background-color: var(--btn-bg-color);
+
+}
+
+.is__liked {
+    background-color: var(--warning-color);
+}
+
+.isin__watchlater {
     background-color: var(--warning-color);
 }

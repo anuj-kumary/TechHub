@@ -15,3 +15,39 @@ export const signupSevices = async (email, password, firstName, lastName) =>
     firstName,
     lastName,
   });
+
+export const likedServices = async (video, encodedToken) =>
+  await axios.post(
+    '/api/user/likes',
+    { video },
+    {
+      headers: {
+        authorization: encodedToken,
+      },
+    }
+  );
+
+export const removeLikedVideoService = async (videoId, encodedToken) =>
+  await axios.delete(`/api/user/likes/${videoId}`, {
+    headers: {
+      authorization: encodedToken,
+    },
+  });
+
+export const watchLaterServices = async (video, encodedToken) =>
+  await axios.post(
+    '/api/user/watchlater',
+    { video },
+    {
+      headers: {
+        authorization: encodedToken,
+      },
+    }
+  );
+
+export const removeWatchLaterServices = async (videoId, encodedToken) =>
+  await axios.delete(`/api/user/watchlater/${videoId}`, {
+    headers: {
+      authorization: encodedToken,
+    },
+  });

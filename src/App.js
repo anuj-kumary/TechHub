@@ -8,9 +8,13 @@ import {
   SingleVideo,
   Signin,
   Signup,
+  Like,
+  Watchlater,
 } from './pages';
+import { useAuth } from './contexts';
 
 function App() {
+  const { token } = useAuth();
   return (
     <div className='App'>
       <Navbar />
@@ -19,6 +23,11 @@ function App() {
         <Route path='/mockman' element={<Mockman />}></Route>
         <Route path='/video' element={<VideoListing />}></Route>
         <Route path='/singlevideo/:videoID' element={<SingleVideo />}></Route>
+        <Route path='/like' element={token ? <Like /> : <Signin />}></Route>
+        <Route
+          path='/watchlater'
+          element={token ? <Watchlater /> : <Signin />}
+        ></Route>
         <Route path='/signin' element={<Signin />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
       </Routes>

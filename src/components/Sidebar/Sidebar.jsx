@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 
 export const Sidebar = () => {
@@ -6,21 +7,41 @@ export const Sidebar = () => {
     <>
       <aside className='sidebar'>
         <ul className='sidebar__menu'>
-          <li className='sidebar__link text active'>
-            <i className='fas fa-home'></i>Home
-          </li>
-          <li className='sidebar__link text'>
+          <NavLink
+            to='/video'
+            activeClassName='active'
+            className='sidebar__link text'
+          >
+            <i className='fas fa-home'></i>Explore
+          </NavLink>
+          <NavLink
+            to='/signin'
+            activeClassName='active'
+            className='sidebar__link text'
+          >
             <i className='fas fa-play-circle'></i>Playlist
-          </li>
-          <li className='sidebar__link text'>
+          </NavLink>
+          <NavLink
+            to='/like'
+            activeClassName='active'
+            className='sidebar__link text'
+          >
             <i className='fas fa-heart'></i>Liked
-          </li>
-          <li className='sidebar__link text'>
+          </NavLink>
+          <NavLink
+            to='/watchlater'
+            activeClassName='active'
+            className='sidebar__link text'
+          >
             <i className='fas fa-clock'></i>Watch Later
-          </li>
-          <li className='sidebar__link text'>
+          </NavLink>
+          <NavLink
+            to='/signin'
+            activeClassName='active'
+            className='sidebar__link text'
+          >
             <i className='fas fa-history'></i> History
-          </li>
+          </NavLink>
         </ul>
       </aside>
     </>
