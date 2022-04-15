@@ -10,9 +10,15 @@ export const Watchlater = () => {
       <div className='video__container'>
         <Sidebar />
         <div className='video__list'>
-          {state.watchlater.map((item) => (
-            <VideoCard item={item} key={item._id} />
-          ))}
+          {state.watchlater.length > 0 ? (
+            state.watchlater.map((item) => (
+              <VideoCard item={item} key={item._id} />
+            ))
+          ) : (
+            <h1 className='text text__center'>
+              There is no watch later video currently
+            </h1>
+          )}
         </div>
       </div>
     </div>
