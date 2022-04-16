@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth, useData } from '../../../contexts';
+import { addToHistory } from '../../../utils/historyUtils';
 import { watchLaterHandler } from '../../../utils';
 import {
   addToVideoPlaylist,
@@ -12,6 +13,8 @@ import './VideoCard.css';
 export const VideoCard = ({ item, listId, isInPlaylistVideo }) => {
   const navigate = useNavigate();
   const { token } = useAuth();
+  const { dispatch } = useData();
+
   const { modal, setModal, modalData, dispatch, setModalData, state } =
     useData();
   const [showModal, setShowModal] = useState();
@@ -25,10 +28,12 @@ export const VideoCard = ({ item, listId, isInPlaylistVideo }) => {
     setPlaylistName('');
   };
 
+
   const { _id, img, title, creator, date } = item;
 
   const singleVideoPage = () => {
     navigate(`/singlevideo/${_id}`);
+    token && addToHistory(item, token, dispatch);
   };
 
   const addToPlaylist = () => {

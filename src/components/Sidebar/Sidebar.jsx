@@ -36,7 +36,7 @@ export const Sidebar = () => {
             <i className='fas fa-clock'></i>Watch Later
           </NavLink>
           <NavLink
-            to='/signin'
+            to='/history'
             activeClassName='active'
             className='sidebar__link text'
           >

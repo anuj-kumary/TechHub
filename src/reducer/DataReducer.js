@@ -4,7 +4,9 @@ export const InitialState = {
   videos: [],
   like: [],
   watchlater: [],
+  history: [],
   playlists: [],
+
 };
 
 export const DataReducer = (state, action) => {
@@ -56,6 +58,13 @@ export const DataReducer = (state, action) => {
             ? action.payload.playlists
             : list
         ),
+      };
+    }
+
+    case ACTION_TYPE.HISTORY: {
+      return {
+        ...state,
+        history: action.payload.history,
       };
     }
 
