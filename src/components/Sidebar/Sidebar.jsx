@@ -15,7 +15,7 @@ export const Sidebar = () => {
             <i className='fas fa-home'></i>Explore
           </NavLink>
           <NavLink
-            to='/signin'
+            to='/playlist'
             activeClassName='active'
             className='sidebar__link text'
           >
