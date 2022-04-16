@@ -51,3 +51,14 @@ export const removeWatchLaterServices = async (videoId, encodedToken) =>
       authorization: encodedToken,
     },
   });
+
+export const addToHistoryServices = async (video, encodedToken) =>
+  await axios.post(
+    '/api/user/history',
+    { video },
+    {
+      headers: {
+        authorization: encodedToken,
+      },
+    }
+  );

@@ -4,6 +4,7 @@ export const InitialState = {
   videos: [],
   like: [],
   watchlater: [],
+  history: [],
 };
 
 export const DataReducer = (state, action) => {
@@ -39,6 +40,13 @@ export const DataReducer = (state, action) => {
       return {
         ...state,
         watchlater: action.payload.watchlater,
+      };
+    }
+
+    case ACTION_TYPE.HISTORY: {
+      return {
+        ...state,
+        history: action.payload.history,
       };
     }
 

@@ -10,6 +10,7 @@ import {
   Signup,
   Like,
   Watchlater,
+  History,
 } from './pages';
 import { useAuth } from './contexts';
 
@@ -27,6 +28,10 @@ function App() {
         <Route
           path='/watchlater'
           element={token ? <Watchlater /> : <Signin />}
+        ></Route>
+        <Route
+          path='history'
+          element={token ? <History /> : <Signin />}
         ></Route>
         <Route path='/signin' element={<Signin />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
