@@ -13,8 +13,6 @@ import './VideoCard.css';
 export const VideoCard = ({ item, listId, isInPlaylistVideo }) => {
   const navigate = useNavigate();
   const { token } = useAuth();
-  const { dispatch } = useData();
-
   const { modal, setModal, modalData, dispatch, setModalData, state } =
     useData();
   const [showModal, setShowModal] = useState();
@@ -27,7 +25,6 @@ export const VideoCard = ({ item, listId, isInPlaylistVideo }) => {
     playlistName && playlistHandler(dispatch, playlistName, token);
     setPlaylistName('');
   };
-
 
   const { _id, img, title, creator, date } = item;
 

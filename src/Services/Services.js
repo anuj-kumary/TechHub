@@ -52,6 +52,53 @@ export const removeWatchLaterServices = async (videoId, encodedToken) =>
     },
   });
 
+export const createNewPlaylistService = async (encodedToken, name) =>
+  await axios.post(
+    '/api/user/playlists',
+    {
+      playlist: {
+        title: name,
+        description: '',
+      },
+    },
+    {
+      headers: {
+        authorization: encodedToken,
+      },
+    }
+  );
+
+export const addVideoPlaylistServices = async (id, video, encodedToken) =>
+  await axios.post(
+    `/api/user/playlists/${id}`,
+    { video },
+    {
+      headers: {
+        authorization: encodedToken,
+      },
+    }
+  );
+
+export const removeVideoPlaylistServices = async (
+  id,
+  videoId,
+  encodedToken
+) => {
+  return await axios.delete(`/api/user/playlists/${videoId}/${id}`, {
+    headers: {
+      authorization: encodedToken,
+    },
+  });
+};
+
+export const removePlaylistServices = async (id, encodedToken) => {
+  return await axios.delete(`/api/user/playlists/${id}`, {
+    headers: {
+      authorization: encodedToken,
+    },
+  });
+};
+
 export const addToHistoryServices = async (video, encodedToken) =>
   await axios.post(
     '/api/user/history',

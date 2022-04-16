@@ -35,6 +35,7 @@ function App() {
           path='history'
           element={token ? <History /> : <Signin />}
         ></Route>
+        <Route
           path='/playlist'
           element={token ? <Playlist /> : <Signin />}
         ></Route>
