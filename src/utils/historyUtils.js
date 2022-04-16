@@ -1,4 +1,8 @@
-import { addToHistoryServices } from '../Services/Services';
+import {
+  addToHistoryServices,
+  clearAllHistoryServices,
+  deleteVideoHistoryServices,
+} from '../Services/Services';
 
 export const addToHistory = (video, token, dispatch) => {
   try {
@@ -13,6 +17,40 @@ export const addToHistory = (video, token, dispatch) => {
         });
       }
     })();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const deleteVideoHistory = async (videoId, encodedToken, dispatch) => {
+  try {
+    const response = await deleteVideoHistoryServices(videoId, encodedToken);
+    if (response.status === 200) {
+      dispatch({
+        type: 'HISTORY',
+        payload: {
+          history: response.data.history,
+        },
+      });
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const clearAllHistory = async (encodedToken, dispatch) => {
+  console.log(encodedToken);
+  try {
+    const response = await clearAllHistoryServices(encodedToken);
+    console.log(response);
+    if (response.status === 200) {
+      dispatch({
+        type: 'HISTORY',
+        payload: {
+          history: response.data.history,
+        },
+      });
+    }
   } catch (error) {
     console.error(error);
   }

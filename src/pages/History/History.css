@@ -1,0 +1,10 @@
+.history__btn {
+    float: right;
+    position: absolute;
+    right: 0;
+}
+
+.clear__btn {
+    background-color: var(--danger-color);
+    text-transform: capitalize;
+}
