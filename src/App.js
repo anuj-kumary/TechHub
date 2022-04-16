@@ -10,8 +10,10 @@ import {
   Signup,
   Like,
   Watchlater,
+  Playlist,
 } from './pages';
 import { useAuth } from './contexts';
+import { PlaylistVideo } from './pages/Playlist/component/PlaylistVideo';
 
 function App() {
   const { token } = useAuth();
@@ -28,6 +30,11 @@ function App() {
           path='/watchlater'
           element={token ? <Watchlater /> : <Signin />}
         ></Route>
+        <Route
+          path='/playlist'
+          element={token ? <Playlist /> : <Signin />}
+        ></Route>
+        <Route path='/playlist/:playlistId' element={<PlaylistVideo />}></Route>
         <Route path='/signin' element={<Signin />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
       </Routes>

@@ -4,6 +4,7 @@
     height: 16rem;
     cursor: pointer;
     margin: 1rem .125rem;
+
 }
 
 .card__heading {
@@ -40,4 +41,89 @@
     float: right;
     padding-right: .5rem;
     color: var(--off-white);
+}
+
+.ellipse {
+    position: relative;
+}
+
+.modal {
+    background-color: var(--bg-color);
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    position: absolute;
+    top: -.75rem;
+    right: 1rem;
+    color: var(--off-white);
+}
+
+.modal__text {
+    font-size: .9rem;
+    padding: .6rem;
+    cursor: pointer;
+
+}
+
+.modal__show {
+    display: flex;
+}
+
+.modal__hide {
+    display: none;
+}
+
+.modal-wrapper {
+    background-color: #141319;
+    position: fixed;
+    width: 85vw;
+    height: 100vh;
+    justify-content: center;
+    z-index: 9999;
+    align-items: center;
+}
+
+.playlist__modal {
+    background-color: var(--black);
+    padding: 1rem;
+    grid-gap: 1.2rem;
+    gap: 1.2rem;
+    width: 20rem;
+
+}
+
+.playlist__text {
+    color: var(--off-white);
+    padding: .7rem 0;
+}
+
+.playlist__close {
+    float: right;
+    cursor: pointer;
+}
+
+.playlist__input {
+    margin: 1rem 0;
+    padding: .3rem;
+    border-radius: 5px;
+    outline: none;
+    margin-left: .3rem;
+    color: var(--black);
+}
+
+.playlist__title {
+    color: var(--off-white);
+    padding-left: 0.5rem;
+}
+
+.playlist__btn {
+    width: 100%;
+    padding: .6rem 1rem;
+    outline: none;
+    border-width: 0;
+    font-size: .9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 550;
 }

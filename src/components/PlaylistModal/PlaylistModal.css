@@ -1,0 +1,15 @@
+.modal-wrapper {
+    background-color: red;
+    width: 100vw;
+    position: fixed;
+    height: 100vh;
+    z-index: 9999;
+}
+
+.modal {
+    color: var(--off-white);
+    background: var(--bg-color);
+    padding: 1rem;
+    gap: 1.2rem;
+    width: 20rem
+}
