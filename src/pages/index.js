@@ -7,3 +7,4 @@ export { Watchlater } from './Watch Later/WatchLater';
 export { History } from './History/History';
 export { Signin } from './Authentication/Signin';
 export { Signup } from './Authentication/Signup';
+export { PageNotFound } from './PageNotFound/PageNotFound';
