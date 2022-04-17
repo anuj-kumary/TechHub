@@ -46,7 +46,7 @@ body {
     margin-right: 1rem;
 }
 
-::placeholder {
+input[type="search"]::-webkit-input-placeholder {
     color: var(--off-white);
 }
 

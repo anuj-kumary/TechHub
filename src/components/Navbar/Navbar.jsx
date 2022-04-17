@@ -1,10 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useAuth } from '../../contexts';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useAuth, useData } from '../../contexts';
 import './Navbar.css';
 
 export const Navbar = () => {
   const { token, logoutHandler } = useAuth();
+  const [input, setInput] = useState('');
+  const navigate = useNavigate();
+  const { dispatch } = useData();
+  const searchHandler = (e) => {
+    if (e.key === 'Enter' || e.keyCode === 8 || e.target.value === '') {
+      dispatch({
+        type: 'SEARCH',
+        payload: e.target.value,
+      });
+    }
+  };
+
   return (
     <>
       <nav className='navigation'>
@@ -14,7 +27,14 @@ export const Navbar = () => {
           </Link>
         </div>
         <ul className='navbar__search'>
-          <input className='search__box' type='search' placeholder='Search' />
+          <input
+            className='search__box'
+            value={input}
+            onKeyDown={(e) => searchHandler(e)}
+            onChange={(e) => setInput(e.target.value)}
+            type='search'
+            placeholder='Search with name'
+          />
         </ul>
 
         <ul className='navbar__right'>

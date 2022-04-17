@@ -2,11 +2,13 @@ import { ACTION_TYPE } from '../utils';
 
 export const InitialState = {
   videos: [],
+  categories: [],
   like: [],
   watchlater: [],
   history: [],
   playlists: [],
-
+  search: '',
+  sortBy: '',
 };
 
 export const DataReducer = (state, action) => {
@@ -15,6 +17,36 @@ export const DataReducer = (state, action) => {
       return {
         ...state,
         videos: action.payload,
+      };
+    }
+
+    case ACTION_TYPE.CATEGORIES: {
+      return {
+        ...state,
+        categories: [
+          ...action.payload.map((cat) => ({
+            ...cat,
+            isActive: cat.categotyName === 'ALL' ? true : false,
+          })),
+        ],
+      };
+    }
+
+    case ACTION_TYPE.SORT_BY: {
+      return {
+        ...state,
+        sortBy: action.payload,
+        categories: state.categories.map((cat) =>
+          cat.categotyName === action.payload
+            ? {
+                ...cat,
+                isActive: true,
+              }
+            : {
+                ...cat,
+                isActive: false,
+              }
+        ),
       };
     }
 
@@ -65,6 +97,12 @@ export const DataReducer = (state, action) => {
       return {
         ...state,
         history: action.payload.history,
+      };
+    }
+    case ACTION_TYPE.SEARCH: {
+      return {
+        ...state,
+        search: action.payload,
       };
     }
 

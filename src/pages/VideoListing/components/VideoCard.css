@@ -7,6 +7,15 @@
 
 }
 
+.video__card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    padding: 0 0.5rem;
+}
+
 .card__heading {
     font-size: .9rem;
     color: var(--off-white);
@@ -75,7 +84,7 @@
 }
 
 .modal-wrapper {
-    background-color: #141319;
+    background-color: #1413193f;
     position: fixed;
     width: 85vw;
     height: 100vh;
