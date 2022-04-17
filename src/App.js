@@ -12,6 +12,7 @@ import {
   Watchlater,
   History,
   Playlist,
+  PageNotFound,
 } from './pages';
 import { useAuth, useTheme } from './contexts';
 import { PlaylistVideo } from './pages/Playlist/component/PlaylistVideo';
@@ -60,6 +61,7 @@ function App() {
         <Route path='/playlist/:playlistId' element={<PlaylistVideo />}></Route>
         <Route path='/signin' element={<Signin />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
+        <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
     </div>
   );
