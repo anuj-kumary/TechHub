@@ -14,7 +14,7 @@ export const Like = () => {
             {state.like.length > 0 ? (
               state.like.map((item) => <VideoCard item={item} key={item._id} />)
             ) : (
-              <h1 className='text text__center'>
+              <h1 className='text text__center heading__text'>
                 Looks like you haven't liked anything yet.
               </h1>
             )}

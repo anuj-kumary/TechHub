@@ -15,7 +15,7 @@ export const Signin = () => {
     <div className='container'>
       <div className='auth__form'>
         <div className='auth__title'>
-          <h2 className='heading text__center text'>Sign In</h2>
+          <h2 className='heading text__center'>Sign In</h2>
         </div>
         <div className='input'>
           <label className='label__text'>Email</label>

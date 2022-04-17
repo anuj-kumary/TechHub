@@ -16,7 +16,7 @@ export const Watchlater = () => {
                 <VideoCard item={item} key={item._id} />
               ))
             ) : (
-              <h1 className='text text__center'>
+              <h1 className='text text__center heading__text'>
                 There is no watch later video currently
               </h1>
             )}

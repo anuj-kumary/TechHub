@@ -96,16 +96,11 @@
 }
 
 .playlist__modal {
-    background-color: var(--black);
+    background-color: var(--btn-bg-color);
     padding: 1rem;
     grid-gap: 1.2rem;
     gap: 1.2rem;
     width: 20rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: fixed;
-
 }
 
 .playlist__text {

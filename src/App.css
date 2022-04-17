@@ -3,13 +3,27 @@
   --active-color: #34343d;
   --main-bg-color: #1e2024;
   --btn-bg-color: #34343d;
+  --btn-text-color: #fff;
+  --overlay-bg: rgba(18, 18, 18, 0.301);
+  --btn-bg: #dbdbdb;
+}
+
+[data-theme='light'] {
+  --bg-color: #dbdbdb;
+  --active-color: #cecece;
+  --main-bg-color: #f4f4f4;
+  --off-white: #111;
+  --overlay-bg: rgb(0 0 0 / 12%);
+  --btn-bg-color: #fff;
+  --btn-text-color: #fff;
+  --btn-bg: #34343d;
 }
 
 .text {
-  color: var(--off-white);
+  color: var(--btn-text-color);
   text-transform: uppercase;
 }
 
-.text:hover {
-  color: var(--off-white);
+.heading__text {
+  color: var(--btn-bg)
 }
