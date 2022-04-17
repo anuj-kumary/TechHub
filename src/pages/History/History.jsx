@@ -30,7 +30,7 @@ export const History = () => {
                 <HistoryCard key={item._id} item={item} />
               ))
             ) : (
-              <h1 className='text text__center'>
+              <h1 className='text text__center heading__text'>
                 Looks like you haven't Added anything yet.
               </h1>
             )}

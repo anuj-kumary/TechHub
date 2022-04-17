@@ -23,3 +23,7 @@
   color: var(--btn-text-color);
   text-transform: uppercase;
 }
+
+.heading__text {
+  color: var(--btn-bg)
+}

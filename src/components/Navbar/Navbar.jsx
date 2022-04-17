@@ -25,7 +25,7 @@ export const Navbar = () => {
         <ul className='navbar__right'>
           {token ? (
             <div title='Profile' className='user__icon'>
-              <Link className='text' to='/profile'>
+              <Link className='text user__icon' to='/profile'>
                 <i className='fas fa-user-circle'></i>
               </Link>
             </div>
