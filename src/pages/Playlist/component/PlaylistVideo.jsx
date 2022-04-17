@@ -18,20 +18,22 @@ export const PlaylistVideo = () => {
         <Sidebar />
 
         <div className='video__list'>
-          {videos.length > 0 ? (
-            videos.map((item) => (
-              <PlaylistCard
-                item={item}
-                listId={playlistId}
-                isInPlaylistVideo={isInPlaylistVideo}
-                key={item._id}
-              />
-            ))
-          ) : (
-            <h1 className='text text__center'>
-              Looks like you haven't Added anything yet.
-            </h1>
-          )}
+          <div className='video__card'>
+            {videos.length > 0 ? (
+              videos.map((item) => (
+                <PlaylistCard
+                  item={item}
+                  listId={playlistId}
+                  isInPlaylistVideo={isInPlaylistVideo}
+                  key={item._id}
+                />
+              ))
+            ) : (
+              <h1 className='text text__center'>
+                Looks like you haven't Added anything yet.
+              </h1>
+            )}
+          </div>
         </div>
       </div>
     </div>

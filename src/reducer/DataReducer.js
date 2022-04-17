@@ -37,7 +37,7 @@ export const DataReducer = (state, action) => {
         ...state,
         sortBy: action.payload,
         categories: state.categories.map((cat) =>
-          cat.categotyName === action.payload
+          cat.categoryName === action.payload
             ? {
                 ...cat,
                 isActive: true,

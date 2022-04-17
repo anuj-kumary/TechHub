@@ -13,6 +13,7 @@ export const VideoListing = () => {
       payload: catName,
     });
   };
+
   const searchByName = searchVideos([...state.videos], state.search);
   const sortByCategory = sortVideosCategory(searchByName, state.sortBy);
 
@@ -22,13 +23,17 @@ export const VideoListing = () => {
         <Sidebar />
         <div className='video__list'>
           <div className='category__list'>
-            {state.categories.map((cat) => (
+            {state.categories.map(({ _id, categoryName, isActive }) => (
               <button
-                key={cat._id}
-                onClick={() => sortCategory(cat.categoryName)}
-                className='btn btn__action btn__icon'
+                key={_id}
+                onClick={() => sortCategory(categoryName)}
+                className={
+                  isActive
+                    ? 'btn btn__action btn__icon catbtn__active'
+                    : 'btn btn__action btn__icon'
+                }
               >
-                {cat.categoryName}
+                {categoryName}
               </button>
             ))}
           </div>

@@ -15,11 +15,24 @@ import {
 } from './pages';
 import { useAuth } from './contexts';
 import { PlaylistVideo } from './pages/Playlist/component/PlaylistVideo';
+import { Profile } from './pages/Profile/Profile';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const { token } = useAuth();
   return (
     <div className='App'>
+      <ToastContainer
+        position='bottom-right'
+        autoClose={false}
+        newestOnTop={false}
+        closeOnClick
+        theme='colored'
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+      />
       <Navbar />
       <Routes>
         <Route path='/' element={<LandingPage />}></Route>
@@ -38,6 +51,10 @@ function App() {
         <Route
           path='/playlist'
           element={token ? <Playlist /> : <Signin />}
+        ></Route>
+        <Route
+          path='/profile'
+          element={token ? <Profile /> : <Signin />}
         ></Route>
         <Route path='/playlist/:playlistId' element={<PlaylistVideo />}></Route>
         <Route path='/signin' element={<Signin />}></Route>

@@ -63,3 +63,7 @@ input[type="search"]::-webkit-input-placeholder {
 .navbar__right>.btn {
     text-align: center;
 }
+
+.user__icon {
+    font-size: 1.5rem;
+}

@@ -4,6 +4,7 @@ import {
   removeVideoPlaylistServices,
   removePlaylistServices,
 } from '../Services/Services';
+import { ToastHandler } from './toastfunction';
 
 export const playlistHandler = async (dispatch, name, token) => {
   try {
@@ -44,6 +45,7 @@ export const removeVideoFromPlaylist = async (dispatch, id, videoId, token) => {
         playlists: response.data.playlist,
       },
     });
+    ToastHandler('success', 'Video removed from Your Playlist');
   } catch (error) {
     console.error(error);
   }
@@ -59,6 +61,7 @@ export const removePlaylist = async (id, token, dispatch) => {
           playlists: response.data.playlists,
         },
       });
+      ToastHandler('success', 'Playlist Deleted succesfully');
     }
   } catch (error) {
     console.error(error);

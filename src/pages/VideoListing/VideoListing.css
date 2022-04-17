@@ -15,3 +15,7 @@
     padding-left: 1.6rem;
 
 }
+
+.catbtn__active {
+    background-color: var(--warning-color);
+}
