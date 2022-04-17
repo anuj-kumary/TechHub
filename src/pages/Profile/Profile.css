@@ -21,3 +21,7 @@
 .profile__email {
     float: right;
 }
+
+.profile__btn {
+    color: var(--btn-text-color);
+}

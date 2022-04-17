@@ -13,7 +13,7 @@ import {
   History,
   Playlist,
 } from './pages';
-import { useAuth } from './contexts';
+import { useAuth, useTheme } from './contexts';
 import { PlaylistVideo } from './pages/Playlist/component/PlaylistVideo';
 import { Profile } from './pages/Profile/Profile';
 import { ToastContainer } from 'react-toastify';
@@ -21,8 +21,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const { token } = useAuth();
+  const { theme } = useTheme();
   return (
-    <div className='App'>
+    <div className='App' data-theme={theme}>
       <ToastContainer
         position='bottom-right'
         autoClose={false}

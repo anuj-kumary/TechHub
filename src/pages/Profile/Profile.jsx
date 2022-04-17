@@ -25,7 +25,7 @@ export const Profile = () => {
             <header className='card__heading line'>Profile Settings</header>
             <button
               onClick={(e) => logoutHandler(e)}
-              className='btn btn__primary'
+              className='btn btn__primary profile__btn'
             >
               Logout
             </button>

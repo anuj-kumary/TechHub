@@ -3,6 +3,18 @@
   --active-color: #34343d;
   --main-bg-color: #1e2024;
   --btn-bg-color: #34343d;
+  --btn-text-color: #fff;
+  --overlay-bg: rgba(18, 18, 18, 0.301);
+}
+
+[data-theme='light'] {
+  --bg-color: #dbdbdb;
+  --active-color: #cecece;
+  --main-bg-color: #f4f4f4;
+  --off-white: #111;
+  --overlay-bg: rgb(0 0 0 / 12%);
+  --btn-bg-color: #fff;
+  --btn-text-color: #fff;
 }
 
 .text {
