@@ -19,6 +19,10 @@
     color: var(--off-white);
 }
 
+.sidebar__link:hover {
+    color: var(--btn-bg);
+}
+
 .active {
     background-color: var(--active-color);
 }

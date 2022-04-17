@@ -19,6 +19,10 @@
   --btn-bg: #34343d;
 }
 
+a:hover {
+  color: var(--btn-bg);
+}
+
 .text {
   color: var(--btn-text-color);
   text-transform: uppercase;

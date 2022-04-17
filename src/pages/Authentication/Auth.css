@@ -17,6 +17,10 @@
     border-radius: 5px;
 }
 
+.auth__title>.heading {
+    color: var(--btn-bg);
+}
+
 .label__text,
 .login__link,
 .login__nav {

@@ -7,7 +7,7 @@ export const LandingPage = () => {
     <>
       <div className='hero'>
         <h1 className='hero__logo'>TechHub</h1>
-        <img src='./img/bg.jpg' alt='background' />
+        <img src='./img/bg.jpeg' alt='background' />
         <div className='hero__content'>
           <h1 className='hero__heading'>Welcome to TechHub</h1>
           <h2 className='sub__heading'>Watch anywhere anytime.</h2>

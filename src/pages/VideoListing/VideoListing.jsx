@@ -37,7 +37,7 @@ export const VideoListing = () => {
               </button>
             ))}
           </div>
-          <div className='video__card'>
+          <div className='video__card m-1'>
             {sortByCategory.map((item) => (
               <VideoCard item={item} key={item._id} />
             ))}
