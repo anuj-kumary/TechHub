@@ -4,7 +4,7 @@
 }
 
 .line {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--off-white);
     padding: 1rem .6rem;
 }
 
