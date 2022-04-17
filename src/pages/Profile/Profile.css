@@ -1,0 +1,23 @@
+.profile__card {
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    border-bottom: 1px solid #fff;
+    padding: 1rem .6rem;
+}
+
+.user__card {
+    width: 22rem;
+}
+
+.profile__text {
+    color: var(--off-white);
+    padding: .5rem .6rem;
+}
+
+.profile__name,
+.profile__email {
+    float: right;
+}

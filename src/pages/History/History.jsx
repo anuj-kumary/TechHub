@@ -24,16 +24,17 @@ export const History = () => {
               </button>
             </div>
           )}
-
-          {state.history.length > 0 ? (
-            state.history.map((item) => (
-              <HistoryCard key={item._id} item={item} />
-            ))
-          ) : (
-            <h1 className='text text__center'>
-              Looks like you haven't Added anything yet.
-            </h1>
-          )}
+          <div className='video__card'>
+            {state.history.length > 0 ? (
+              state.history.map((item) => (
+                <HistoryCard key={item._id} item={item} />
+              ))
+            ) : (
+              <h1 className='text text__center'>
+                Looks like you haven't Added anything yet.
+              </h1>
+            )}
+          </div>
         </div>
       </div>
     </div>

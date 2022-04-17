@@ -1,4 +1,5 @@
 import { likedServices, removeLikedVideoService } from '../Services/Services';
+import { ToastHandler } from './toastfunction';
 
 export const likedHandler = async (video, token, dispatch, isLiked) => {
   if (isLiked) {
@@ -12,6 +13,7 @@ export const likedHandler = async (video, token, dispatch, isLiked) => {
           like: response.data.likes,
         },
       });
+      ToastHandler('success', 'Video Added In Your Liked Page');
     }
   }
 };

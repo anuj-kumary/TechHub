@@ -12,15 +12,17 @@ export const Playlist = () => {
       <div className='video__container'>
         <Sidebar />
         <div className='video__list'>
-          {isPlaylistFill ? (
-            state.playlists.map((element) => (
-              <PlaylistFolder key={element._id} element={element} />
-            ))
-          ) : (
-            <h3 className='text text__center'>
-              Looks like you haven't create playlist
-            </h3>
-          )}
+          <div className='video__card'>
+            {isPlaylistFill ? (
+              state.playlists.map((element) => (
+                <PlaylistFolder key={element._id} element={element} />
+              ))
+            ) : (
+              <h3 className='text text__center'>
+                Looks like you haven't create playlist
+              </h3>
+            )}
+          </div>
         </div>
       </div>
     </div>

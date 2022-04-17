@@ -84,10 +84,12 @@
 }
 
 .modal-wrapper {
-    background-color: #1413193f;
     position: fixed;
-    width: 85vw;
+    width: 100vw;
     height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(18, 18, 18, 0.301);
     justify-content: center;
     z-index: 9999;
     align-items: center;
@@ -99,6 +101,10 @@
     grid-gap: 1.2rem;
     gap: 1.2rem;
     width: 20rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
 
 }
 

@@ -4,6 +4,11 @@
     right: 0;
 }
 
+.video__card {
+    display: flex;
+    margin-top: 3rem;
+}
+
 .clear__btn {
     background-color: var(--danger-color);
     text-transform: capitalize;

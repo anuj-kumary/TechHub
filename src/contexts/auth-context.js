@@ -1,13 +1,13 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginServices, signupSevices } from '../Services/Services';
-
+import { ToastHandler } from '../utils/toastfunction';
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const localStorageToken = JSON.parse(localStorage.getItem('login'));
   const [token, setToken] = useState(localStorageToken?.token);
-  const localStorageUser = JSON.parse(localStorage.getItem('user'));
+  const localStorageUser = JSON.parse(localStorage.getItem('login'));
   const [user, setUser] = useState(localStorageUser?.user);
   const navigate = useNavigate();
 
@@ -39,13 +39,17 @@ const AuthProvider = ({ children }) => {
           'login',
           JSON.stringify({
             token: resp.data.encodedToken,
-            user: resp.data.foundUSer,
+            user: resp.data.foundUser,
           })
         );
-        setUser(resp.data.foundUSer);
+
+        ToastHandler('success', 'Successfully Logged In');
+
+        setUser(resp.data.foundUser);
         setToken(resp.data.encodedToken);
       }
     } catch (error) {
+      ToastHandler('warn', 'Please Enter Valid Username and Password');
       console.error(error);
     }
   };
@@ -55,25 +59,31 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem('login');
     setToken(null);
     setUser(null);
+    ToastHandler('success', 'Successfully Logged Out');
     navigate('/');
   };
 
   const signupHandler = async (email, password, firstName, lastName) => {
-    try {
-      const resp = await signupSevices(email, password, firstName, lastName);
-      if (resp.status === 201) {
-        localStorage.setItem(
-          'login',
-          JSON.stringify({
-            token: resp.data.encodedToken,
-            user: resp.data.createdUser,
-          })
-        );
-        setUser(resp.data.createdUser);
-        setToken(resp.data.encodedToken);
+    if (firstName && lastName && password && email !== '') {
+      try {
+        const resp = await signupSevices(email, password, firstName, lastName);
+        if (resp.status === 201) {
+          localStorage.setItem(
+            'login',
+            JSON.stringify({
+              token: resp.data.encodedToken,
+              user: resp.data.createdUser,
+            })
+          );
+          ToastHandler('success', 'Your Account Is Ready');
+          setUser(resp.data.createdUser);
+          setToken(resp.data.encodedToken);
+        }
+      } catch (error) {
+        console.error(error);
       }
-    } catch (error) {
-      console.error(error);
+    } else {
+      ToastHandler('warn', 'Please Enter Valid User Detail');
     }
   };
 
