@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { ACTION_TYPE } from '../utils/ActionType';
 import { InitialState, DataReducer } from '../reducer/DataReducer';
-import { getAllVideosServices } from '../Services/Services';
+import { getAllCategories, getAllVideosServices } from '../Services/Services';
 
 const DataContext = createContext();
 
@@ -24,6 +24,22 @@ const DataProvider = ({ children }) => {
           dispatch({
             type: ACTION_TYPE.INITIAL_DATA,
             payload: videoResponse.data.videos,
+          });
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await getAllCategories();
+        if (response.status === 200) {
+          dispatch({
+            type: ACTION_TYPE.CATEGORIES,
+            payload: response.data.categories,
           });
         }
       } catch (err) {
