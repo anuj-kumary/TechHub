@@ -36,7 +36,11 @@ export const Navbar = () => {
               </Link>
             </div>
           )}
-          <div onClick={changeTheme} className='user__icon'>
+          <div
+            title={theme === 'dark' ? 'Enable Light Mode' : 'Enable Dark Mode'}
+            onClick={changeTheme}
+            className='user__icon'
+          >
             <li className='text'>
               <i
                 className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}
