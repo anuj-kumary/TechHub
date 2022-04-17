@@ -18,7 +18,7 @@ export const Signup = () => {
     <div className='container signup__container'>
       <div className='auth__form'>
         <div className='auth__title'>
-          <h2 className='heading text__center text'>Sign Up</h2>
+          <h2 className='heading text__center'>Sign Up</h2>
         </div>
         <div className='input'>
           <label className='label__text'>First Name</label>

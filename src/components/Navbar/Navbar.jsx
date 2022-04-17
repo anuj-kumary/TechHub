@@ -41,7 +41,7 @@ export const Navbar = () => {
             onClick={changeTheme}
             className='user__icon'
           >
-            <li className='text'>
+            <li className='user__icon'>
               <i
                 className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}
               ></i>

@@ -67,4 +67,9 @@ input[type=password] {
 
 .btn__secondary {
     color: var(--btn-bg-color);
+    background-color: var(--btn-bg);
+}
+
+.btn__secondary:hover {
+    color: var(--btn-text-color);
 }

@@ -5,6 +5,7 @@
   --btn-bg-color: #34343d;
   --btn-text-color: #fff;
   --overlay-bg: rgba(18, 18, 18, 0.301);
+  --btn-bg: #dbdbdb;
 }
 
 [data-theme='light'] {
@@ -15,13 +16,10 @@
   --overlay-bg: rgb(0 0 0 / 12%);
   --btn-bg-color: #fff;
   --btn-text-color: #fff;
+  --btn-bg: #34343d;
 }
 
 .text {
-  color: var(--off-white);
+  color: var(--btn-text-color);
   text-transform: uppercase;
-}
-
-.text:hover {
-  color: var(--off-white);
 }
