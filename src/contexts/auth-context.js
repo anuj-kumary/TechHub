@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginServices, signupSevices } from '../Services/Services';
 import { ToastHandler } from '../utils/toastfunction';
@@ -10,16 +10,6 @@ const AuthProvider = ({ children }) => {
   const localStorageUser = JSON.parse(localStorage.getItem('login'));
   const [user, setUser] = useState(localStorageUser?.user);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    let id;
-    if (token) {
-      id = setTimeout(() => {
-        navigate('/video');
-      });
-    }
-    return () => clearTimeout(id);
-  }, [token]);
 
   const loginHandler = async (e, setLogin, login) => {
     e.preventDefault();
@@ -42,6 +32,7 @@ const AuthProvider = ({ children }) => {
             user: resp.data.foundUser,
           })
         );
+        navigate('/video');
 
         ToastHandler('success', 'Successfully Logged In');
 

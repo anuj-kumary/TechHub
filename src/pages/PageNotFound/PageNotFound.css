@@ -21,7 +21,7 @@
 }
 
 .title,
-.sub__heading {
+.para {
     padding-top: 1rem;
     color: var(--btn-bg);
 }

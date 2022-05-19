@@ -19,7 +19,7 @@
     position: absolute;
     top: 1rem;
     left: 1rem;
-    color: var(--white);
+    color: var(--btn-text-color);
 
 }
 
