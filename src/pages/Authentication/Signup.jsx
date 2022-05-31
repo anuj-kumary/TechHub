@@ -5,7 +5,7 @@ import { useAuth } from '../../contexts';
 import './Auth.css';
 
 export const Signup = () => {
-  const { signupHandler } = useAuth();
+  const { signupHandler, passwordValidation } = useAuth();
 
   const [signup, setSignup] = useState({
     email: '',
@@ -61,6 +61,12 @@ export const Signup = () => {
             placeholder='*********'
             onChange={(e) => setSignup({ ...signup, password: e.target.value })}
           />
+          {!passwordValidation && (
+            <p className='err__text '>
+              Password should contain atleast 8 characters, 1 uppercase, 1
+              lowercase and 1 digit
+            </p>
+          )}
         </div>
 
         <div className='btn__signup text__center'>

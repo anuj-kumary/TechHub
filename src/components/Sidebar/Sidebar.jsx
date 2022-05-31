@@ -1,11 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useData } from '../../contexts';
 import './Sidebar.css';
 
 export const Sidebar = () => {
+  const { toggleSidebar } = useData();
   return (
     <>
-      <aside className='sidebar'>
+      <aside className={toggleSidebar ? 'sidebar' : 'sidebar show__sidebar'}>
         <ul className='sidebar__menu'>
           <NavLink
             to='/video'

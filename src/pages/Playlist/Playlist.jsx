@@ -18,9 +18,9 @@ export const Playlist = () => {
                 <PlaylistFolder key={element._id} element={element} />
               ))
             ) : (
-              <h3 className='text text__center heading__text'>
+              <h1 className='text text__center heading__text'>
                 Looks like you haven't create playlist
-              </h3>
+              </h1>
             )}
           </div>
         </div>

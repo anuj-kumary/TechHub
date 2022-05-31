@@ -13,7 +13,11 @@
 
 .category__list {
     padding-left: 1.6rem;
-
+    position: fixed;
+    z-index: 999;
+    background-color: var(--main-bg-color);
+    width: 100%;
+    top: 70px
 }
 
 .m-1 {

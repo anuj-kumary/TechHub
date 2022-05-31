@@ -12,6 +12,10 @@ body {
     border-radius: 0;
 }
 
+.hamburger__icon {
+    display: none;
+}
+
 .navigation__logo {
     display: flex;
     align-items: center;
@@ -50,6 +54,14 @@ input[type="search"]::-webkit-input-placeholder {
     color: var(--off-white);
 }
 
+
+.search__icon {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    color: var(--off-white);
+}
+
 .btn {
     color: var(--off-white);
     padding: .5rem;
@@ -74,4 +86,10 @@ input[type="search"]::-webkit-input-placeholder {
 .btn__primary:hover {
     opacity: .9;
     color: var(--btn-text-color);
+}
+
+@media screen and (max-width:780px) {
+    .hamburger__icon {
+        display: block;
+    }
 }
