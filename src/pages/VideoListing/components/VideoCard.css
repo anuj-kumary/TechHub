@@ -12,7 +12,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     flex-grow: 1;
-    justify-content: space-evenly;
+    gap: .5rem;
     padding: 0 0.5rem;
 }
 
@@ -136,4 +136,10 @@
     border-radius: 5px;
     cursor: pointer;
     font-weight: 550;
+}
+
+@media screen and (max-width:780px) {
+    .video__card {
+        justify-content: space-evenly;
+    }
 }

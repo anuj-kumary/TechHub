@@ -9,7 +9,11 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorageToken?.token);
   const localStorageUser = JSON.parse(localStorage.getItem('login'));
   const [user, setUser] = useState(localStorageUser?.user);
+  const [passwordValidation, setPasswordValidation] = useState(
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm
+  );
   const navigate = useNavigate();
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
   const loginHandler = async (e, setLogin, login) => {
     e.preventDefault();
@@ -57,18 +61,32 @@ const AuthProvider = ({ children }) => {
   const signupHandler = async (email, password, firstName, lastName) => {
     if (firstName && lastName && password && email !== '') {
       try {
-        const resp = await signupSevices(email, password, firstName, lastName);
-        if (resp.status === 201) {
-          localStorage.setItem(
-            'login',
-            JSON.stringify({
-              token: resp.data.encodedToken,
-              user: resp.data.createdUser,
-            })
-          );
-          ToastHandler('success', 'Your Account Is Ready');
-          setUser(resp.data.createdUser);
-          setToken(resp.data.encodedToken);
+        if (email.match(emailRegex)) {
+          if (password.match(passwordValidation)) {
+            const resp = await signupSevices(
+              email,
+              password,
+              firstName,
+              lastName
+            );
+            if (resp.status === 201) {
+              localStorage.setItem(
+                'login',
+                JSON.stringify({
+                  token: resp.data.encodedToken,
+                  user: resp.data.createdUser,
+                })
+              );
+              ToastHandler('success', 'Your Account Is Ready');
+              setUser(resp.data.createdUser);
+              setToken(resp.data.encodedToken);
+              navigate('/');
+            }
+          } else {
+            setPasswordValidation();
+          }
+        } else {
+          ToastHandler('warn', 'Please Enter Valid Email Id');
         }
       } catch (error) {
         console.error(error);
@@ -80,7 +98,14 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ logoutHandler, loginHandler, signupHandler, token, user }}
+      value={{
+        logoutHandler,
+        loginHandler,
+        signupHandler,
+        token,
+        user,
+        passwordValidation,
+      }}
     >
       {children}
     </AuthContext.Provider>

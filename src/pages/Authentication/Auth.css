@@ -27,6 +27,11 @@
     color: var(--off-white)
 }
 
+.err__text {
+    color: var(--danger-color);
+    font-weight: 550;
+}
+
 .login__link:hover {
     color: var(--primary-color);
 }

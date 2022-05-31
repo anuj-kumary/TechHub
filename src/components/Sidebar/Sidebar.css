@@ -26,3 +26,13 @@
 .active {
     background-color: var(--active-color);
 }
+
+@media screen and (max-width:780px) {
+    .sidebar {
+        display: none;
+    }
+
+    .show__sidebar {
+        display: block;
+    }
+}

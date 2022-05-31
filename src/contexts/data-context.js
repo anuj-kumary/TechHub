@@ -15,6 +15,11 @@ const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(DataReducer, InitialState);
   const [modal, setModal] = useState(false);
   const [modalData, setModalData] = useState(false);
+  const [toggleSidebar, setToggleSidebar] = useState(true);
+
+  const hamburgerClickHandler = () => {
+    setToggleSidebar(!toggleSidebar);
+  };
 
   useEffect(() => {
     (async () => {
@@ -50,7 +55,17 @@ const DataProvider = ({ children }) => {
 
   return (
     <DataContext.Provider
-      value={{ state, dispatch, modal, modalData, setModal, setModalData }}
+      value={{
+        state,
+        dispatch,
+        modal,
+        modalData,
+        setModal,
+        setModalData,
+        hamburgerClickHandler,
+        setToggleSidebar,
+        toggleSidebar,
+      }}
     >
       {children}
     </DataContext.Provider>

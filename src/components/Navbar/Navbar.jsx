@@ -1,12 +1,26 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useAuth, useTheme } from '../../contexts';
+import { useState } from 'react';
+import { useAuth, useData, useTheme } from '../../contexts';
 import './Navbar.css';
+import { ACTION_TYPE } from '../../utils';
 
 export const Navbar = () => {
   const { token } = useAuth();
+  const { hamburgerClickHandler, dispatch } = useData();
   const { theme, changeTheme } = useTheme();
+  const [input, setInput] = useState('');
   const { pathname } = useLocation();
+
+  const searchHandler = (e) => {
+    if (e.key === 'Enter' || e.keyCode === 8 || e.target.value === '') {
+      dispatch({
+        type: 'SEARCH',
+        payload: e.target.value,
+      });
+    }
+  };
+
   return (
     <>
       <nav className='navigation'>
@@ -18,7 +32,22 @@ export const Navbar = () => {
 
         {pathname === '/video' && (
           <ul className='navbar__search'>
-            <input className='search__box' type='search' placeholder='Search' />
+            <input
+              onKeyDown={(e) => searchHandler(e)}
+              onChange={(e) => setInput(e.target.value)}
+              className='search__box'
+              type='search'
+              placeholder='Search with name'
+            />
+            <i
+              onClick={(e) => {
+                dispatch({
+                  type: 'SEARCH',
+                  payload: input,
+                });
+              }}
+              className='search__icon fas fa-search'
+            ></i>
           </ul>
         )}
 
@@ -45,6 +74,11 @@ export const Navbar = () => {
               <i
                 className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}
               ></i>
+            </li>
+          </div>
+          <div className='user__icon hamburger__icon'>
+            <li onClick={hamburgerClickHandler} className='user__icon'>
+              <i className='fas fa-bars'></i>
             </li>
           </div>
         </ul>
