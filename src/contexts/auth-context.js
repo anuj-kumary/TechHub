@@ -21,10 +21,10 @@ const AuthProvider = ({ children }) => {
       let resp;
       if (e.target.innerText === 'Sign In as Guest') {
         setLogin({
-          email: 'adarshbalak@gmail.com',
-          password: 'adarshBalaki123',
+          email: 'anuj@gmail.com',
+          password: 'anuj123',
         });
-        resp = await loginServices('adarshbalak@gmail.com', 'adarshBalaki123');
+        resp = await loginServices('anuj@gmail.com', 'anuj123');
       } else {
         resp = await loginServices(login.email, login.password);
       }
