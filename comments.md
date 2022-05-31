@@ -1,0 +1,3 @@
+- Fix Search Bar Issue
+- Refactor CSS Style for Video Card
+- Add Validation On Signup Page
